@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="view_event_form" model="ir.ui.view">
+        <field name="name">event.event.form.lt.calendar.enhancement</field>
+        <field name="model">event.event</field>
+        <field name="inherit_id" ref="event.view_event_form"/>
+        <field name="arch" type="xml">
+            <field name="user_id" position="after">
+                <field name="main_representative_id"/>
+                <field name="representative_ids" widget="many2many_tags"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_event_tree" model="ir.ui.view">
+        <field name="name">event.event.tree.lt.calendar.enhancement</field>
+        <field name="model">event.event</field>
+        <field name="inherit_id" ref="event.view_event_tree"/>
+        <field name="arch" type="xml">
+            <field name="user_id" position="after">
+                <field name="main_representative_id"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

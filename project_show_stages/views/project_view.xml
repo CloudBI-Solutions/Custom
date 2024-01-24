@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2023 Sodexis
+     License OPL-1 (See LICENSE file for full copyright and licensing details). -->
+<odoo>
+
+    <record id="edit_project" model="ir.ui.view">
+        <field name="name">project.project.form</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project" />
+        <field name="arch" type="xml">
+            <xpath expr="//notebook/page[last()]" position="after">
+                <page string="Project Stages" name="project_stages">
+                    <field name="type_ids" context="{'tree_view_ref':'project.task_type_tree_inherited'}" domain="[('user_id', '=', False)]"/>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
