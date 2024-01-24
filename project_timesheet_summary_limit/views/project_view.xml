@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2019-2023 Sodexis
+     License OPL-1 (See LICENSE file for full copyright and licensing details). -->
+<odoo>
+    <record id="view_project_timesheet_form_summary_limit" model="ir.ui.view">
+        <field name="name">project.timesheet.form.summary.limit</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="hr_timesheet.view_task_form2_inherited" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='timesheet_ids']/tree" position="attributes">
+                <attribute name="limit">20</attribute>
+                <attribute name="default_order">id desc,date desc</attribute>
+                <attribute name="editable">top</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>
